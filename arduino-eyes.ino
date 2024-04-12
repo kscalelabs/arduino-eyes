@@ -42,10 +42,10 @@ void setup() {
   // Initialize the display.
   tft.begin();
 
-  // Draws an eye.
+  // Get size.
   int w = tft.width(), h = tft.height();
 
-  // Eye color.
+  // Draw eye color.
   drawCircleDownwardsFast(tft, w / 2, h / 2, w * 0.5, DARK);
   drawCircleDownwardsFast(tft, w / 2, h / 2, w * 0.4, LIGHT);
 
@@ -58,19 +58,19 @@ void setup() {
   // Draws a big pupil in the center.
   drawCircleDownwardsFast(tft, w / 2, h / 2, w / 8, WHITE);
 
-  // Draw a white circle in the upper left corner.
+  // Draw a white circle in the lower right corner.
   drawCircleInShells(tft, w * 2 / 3, h * 2 / 3, WHITE, w / 24, 0);
 }
 
 void loop(void) {
+  // Get size.
   int w = tft.width(), h = tft.height();
 
-  // Upper circle.
+  // Wait.
   delay(random(2000, 10000));
 
   // Take a random action.
   int action = random(3);
-
   if (action == 0) {
     // Blink upper circle.
     drawCircleInShells(tft, w / 3, h / 3, LIGHT, w / 32, w / 16);
